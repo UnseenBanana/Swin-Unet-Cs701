@@ -170,3 +170,6 @@ datasets/data
 
 # Models
 pretrained_ckpt/**/*
+
+# Model Outputs
+model_out/**/*
