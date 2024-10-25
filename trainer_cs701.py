@@ -39,7 +39,7 @@ def trainer_cs701(args, model, snapshot_path):
 
     # Configure args if not provided
     if not hasattr(args, "num_workers"):
-        args.num_workers = 8
+        args.num_workers = 4
     if not hasattr(args, "eval_interval"):
         args.eval_interval = 5
 
