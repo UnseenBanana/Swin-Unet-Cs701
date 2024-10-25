@@ -87,7 +87,7 @@ parser.add_argument("--throughput", action="store_true", help="Test throughput o
 
 
 args = parser.parse_args()
-args.root_path = os.path.join(args.root_path, "train_npz")
+args.root_path = os.path.join(args.root_path)
 config = get_config(args)
 
 if __name__ == "__main__":
@@ -107,7 +107,7 @@ if __name__ == "__main__":
 
     dataset_config = {
         "cs701": {
-            "root_path": "./datasets/cs701_224/train_npz",
+            "root_path": "./datasets/cs701_224",
             "list_dir": "./lists/lists_cs701",
             "num_classes": 13,
         }

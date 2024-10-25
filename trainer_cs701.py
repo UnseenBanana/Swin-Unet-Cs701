@@ -60,7 +60,7 @@ def trainer_cs701(args, model, snapshot_path):
 
     # Create training and validation datasets
     db_train = Cs701_dataset(
-        base_dir=args.root_path,
+        base_dir=os.path.join(args.root_path, "/train_npz"),
         list_dir=args.list_dir,
         split="train",
         transform=transforms.Compose(
@@ -69,7 +69,7 @@ def trainer_cs701(args, model, snapshot_path):
     )
 
     db_val = Cs701_dataset(
-        base_dir=args.root_path,
+        base_dir=os.path.join(args.root_path, "/val_npz"),
         list_dir=args.list_dir,
         split="val",
         transform=transforms.Compose(
@@ -77,6 +77,7 @@ def trainer_cs701(args, model, snapshot_path):
         ),
     )
     print("The length of train set is: {}".format(len(db_train)))
+    print("The length of val set is: {}".format(len(db_val)))
 
     # Initialize data loaders with worker seed for reproducibility
     def worker_init_fn(worker_id):
