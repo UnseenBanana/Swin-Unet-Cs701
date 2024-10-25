@@ -107,20 +107,12 @@ if __name__ == "__main__":
     torch.cuda.manual_seed(args.seed)
 
     dataset_name = args.dataset
-    # dataset_config = {
-    #     "Synapse": {
-    #         "root_path": args.root_path,
-    #         "list_dir": "./lists/lists_Synapse",
-    #         "num_classes": 9,
-    #     },
-    # }
-
     dataset_config = {
-        "cs701": {
-            "root_path": "./datasets/cs701_224/train_npz",
-            "list_dir": "./lists/lists_cs701",
-            "num_classes": 13,
-        }
+        "Synapse": {
+            "root_path": args.root_path,
+            "list_dir": "./lists/lists_Synapse",
+            "num_classes": 9,
+        },
     }
 
     if args.batch_size != 24 and args.batch_size % 6 == 0:
