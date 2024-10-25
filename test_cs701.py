@@ -20,9 +20,9 @@ parser = argparse.ArgumentParser()
 parser.add_argument(
     "--root_path",
     type=str,
-    default="../data/Synapse/test_vol_h5",
+    default="../data/cs701_224",
     help="root dir for validation volume data",
-)  # for acdc volume_path=root_dir
+)
 parser.add_argument("--dataset", type=str, default="datasets", help="experiment_name")
 parser.add_argument(
     "--num_classes", type=int, default=9, help="output channel of network"
@@ -103,7 +103,7 @@ parser.add_argument("--n_class", default=4, type=int)
 parser.add_argument("--split_name", default="test", help="Directory of the input list")
 
 args = parser.parse_args()
-args.volume_path = os.path.join(args.volume_path, "test_vol_h5")
+args.volume_path = os.path.join(args.root_path, "test_vol_h5")
 config = get_config(args)
 
 
