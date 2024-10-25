@@ -166,6 +166,7 @@ cython_debug/
 
 # Data Files for CS701
 datasets/cs701*/*
+datasets/data
 
 # Models
 pretrained_ckpt/**/*

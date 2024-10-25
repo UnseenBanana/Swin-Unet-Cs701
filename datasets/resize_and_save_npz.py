@@ -72,11 +72,16 @@ if __name__ == "__main__":
     # Paths
     train_npz_input = "./datasets/cs701/train_npz"
     train_npz_output = "./datasets/cs701_224/train_npz"
+    val_npz_input = "./datasets/cs701/val_npz"
+    val_npz_output = "./datasets/cs701_224/val_npz"
     test_h5_input = "./datasets/cs701/test_vol_h5"
     test_h5_output = "./datasets/cs701_224/test_vol_h5"
 
     # Resize training data
     resize_and_save_npz(train_npz_input, train_npz_output)
+
+    # Resize validation data
+    resize_and_save_npz(val_npz_input, val_npz_output)
 
     # Resize test data
     resize_and_save_h5(test_h5_input, test_h5_output)
