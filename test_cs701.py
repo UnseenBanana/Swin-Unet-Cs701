@@ -100,7 +100,9 @@ parser.add_argument("--eval", action="store_true", help="Perform evaluation only
 parser.add_argument("--throughput", action="store_true", help="Test throughput only")
 
 parser.add_argument("--n_class", default=4, type=int)
-parser.add_argument("--split_name", default="test", help="Directory of the input list")
+parser.add_argument(
+    "--split_name", default="test_vol", help="Directory of the input list"
+)
 
 args = parser.parse_args()
 args.volume_path = os.path.join(args.root_path, "test_vol_h5")
