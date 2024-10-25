@@ -58,9 +58,12 @@ def trainer_cs701(args, model, snapshot_path):
     num_classes = args.num_classes  # Output channel of network
     batch_size = args.batch_size * args.n_gpu  # Batch size per GPU
 
+    train_path = os.path.join(args.root_path, "train_npz")
+    val_path = os.path.join(args.root_path, "val_npz")
+
     # Create training and validation datasets
     db_train = Cs701_dataset(
-        base_dir=os.path.join(args.root_path, "/train_npz"),
+        base_dir=train_path,
         list_dir=args.list_dir,
         split="train",
         transform=transforms.Compose(
@@ -69,7 +72,7 @@ def trainer_cs701(args, model, snapshot_path):
     )
 
     db_val = Cs701_dataset(
-        base_dir=os.path.join(args.root_path, "/val_npz"),
+        base_dir=val_path,
         list_dir=args.list_dir,
         split="val",
         transform=transforms.Compose(
