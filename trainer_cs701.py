@@ -37,6 +37,12 @@ def trainer_cs701(args, model, snapshot_path):
     # Import dataset classes
     from datasets.dataset_cs701 import Cs701_dataset, RandomGenerator
 
+    # Configure args if not provided
+    if not hasattr(args, "num_workers"):
+        args.num_workers = 8
+    if not hasattr(args, "eval_interval"):
+        args.eval_interval = 5
+
     # Set up logging
     logging.basicConfig(
         filename=snapshot_path + "/log.txt",
@@ -80,7 +86,7 @@ def trainer_cs701(args, model, snapshot_path):
         db_train,
         batch_size=batch_size,
         shuffle=True,
-        num_workers=8,
+        num_workers=args.num_workers,
         pin_memory=True,
         worker_init_fn=worker_init_fn,
     )
@@ -89,7 +95,7 @@ def trainer_cs701(args, model, snapshot_path):
         db_val,
         batch_size=batch_size,
         shuffle=False,
-        num_workers=8,
+        num_workers=args.num_workers,
         pin_memory=True,
         worker_init_fn=worker_init_fn,
     )
