@@ -78,9 +78,12 @@ def trainer_synapse(args, model, snapshot_path):
     model.train()
     ce_loss = CrossEntropyLoss()
     dice_loss = DiceLoss(num_classes)
-    optimizer = optim.SGD(
-        model.parameters(), lr=base_lr, momentum=0.9, weight_decay=0.0001
+    optimizer = optim.Adam(
+        model.parameters(), lr=base_lr, weight_decay=0.0001, amsgrad=True
     )
+    # optimizer = optim.SGD(
+    #     model.parameters(), lr=base_lr, momentum=0.9, weight_decay=0.0001
+    # )
     writer = SummaryWriter(snapshot_path + "/log")
     iter_num = 0
     max_epoch = args.max_epochs
