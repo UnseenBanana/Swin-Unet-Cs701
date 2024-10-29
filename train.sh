@@ -2,7 +2,7 @@
 if [ $epoch_time ]; then
     EPOCH_TIME=$epoch_time
 else
-    EPOCH_TIME=150
+    EPOCH_TIME=300
 fi
 
 if [ $out_dir ]; then

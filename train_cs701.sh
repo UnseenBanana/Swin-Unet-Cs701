@@ -1,5 +1,5 @@
 #!/bin/bash
-EPOCH_TIME=150
+EPOCH_TIME=300
 OUT_DIR='./model_out'
 CFG='configs/swin_tiny_patch4_window7_224_lite.yaml'
 DATA_DIR='datasets/cs701_224'
