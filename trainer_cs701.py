@@ -114,9 +114,12 @@ def trainer_cs701(args, model, snapshot_path):
     dice_loss = DiceLoss(num_classes)
 
     # Initialize optimizer with SGD (TODO: Consider changing to Adam)
-    optimizer = optim.SGD(
-        model.parameters(), lr=base_lr, momentum=0.9, weight_decay=0.0001
+    optimizer = optim.Adam(
+        model.parameters(), lr=base_lr, weight_decay=0.0001, amsgrad=True
     )
+    # optimizer = optim.SGD(
+    #     model.parameters(), lr=base_lr, momentum=0.9, weight_decay=0.0001
+    # )
 
     # Initialize tensorboard writer for logging
     writer = SummaryWriter(snapshot_path + "/log")
