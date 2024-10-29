@@ -18,6 +18,12 @@ from utils import DiceLoss
 def trainer_synapse(args, model, snapshot_path):
     from datasets.dataset_synapse import Synapse_dataset, RandomGenerator
 
+    # Configure args if not provided
+    if not hasattr(args, "num_workers"):
+        args.num_workers = 4
+    if not hasattr(args, "eval_interval"):
+        args.eval_interval = 5
+
     logging.basicConfig(
         filename=snapshot_path + "/log.txt",
         level=logging.INFO,
