@@ -1,9 +1,9 @@
 #!/bin/bash
-EPOCH_TIME=300
+EPOCH_TIME=1000
 OUT_DIR='./model_out'
 CFG='configs/swin_tiny_patch4_window7_224_lite.yaml'
 DATA_DIR='datasets/cs701_224'
-LEARNING_RATE=0.05
+LEARNING_RATE=0.001
 IMG_SIZE=224
 BATCH_SIZE=24
 

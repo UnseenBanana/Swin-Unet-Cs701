@@ -2,7 +2,7 @@
 if [ $epoch_time ]; then
     EPOCH_TIME=$epoch_time
 else
-    EPOCH_TIME=300
+    EPOCH_TIME=1000
 fi
 
 if [ $out_dir ]; then
@@ -26,7 +26,7 @@ fi
 if [ $learning_rate ]; then
     LEARNING_RATE=$learning_rate
 else
-    LEARNING_RATE=0.05
+    LEARNING_RATE=0.001
 fi
 
 if [ $img_size ]; then
